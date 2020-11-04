@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="154"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Border Name="border" BorderThickness="1" Grid.Column="1" ClipToBounds="True">
+            <Image Name="Image" RenderTransformOrigin="0.2,0.2"
+                       Stretch="None"
+                    Height="750"
+           VerticalAlignment="Top" HorizontalAlignment="Left" Margin="60,0,0,0" />
+        </Border>
+        <Button x:Name="load_button" Content="Wczytaj plik" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="150" Grid.Column="0" Click="Load_button_Click" Height="20"/>
+        <Button x:Name="histogram_button" Content="Pokaż histogram" HorizontalAlignment="Left" Margin="0,30,0,0" VerticalAlignment="Top" Width="150" Grid.Column="0" Click="Histogram_button_Click" Height="20"/>
+        <Button x:Name="strech_button" Content="Rozszerzenie histogramu" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top"  Width="150"  Grid.Column="0" Click="Strech_button_Click" Height="20" />
+        <Button x:Name="equalize_button" Content="Wyrównanie histogramu" HorizontalAlignment="Left" Margin="0,90,0,0" VerticalAlignment="Top" Width="150"  Grid.Column="0" Click="Equalize_button_Click" Height="20" />
+        <Button x:Name="manual_binarization_button" Content="Binaryzacja ręczna" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="150"  Grid.Column="0" Click="Manual_binarization_button_Click" Height="20" />
+        <Button x:Name="percent_binarization_button" Content="Bynarycja procentowa" HorizontalAlignment="Left" Margin="0,194,0,0" VerticalAlignment="Top" Width="150" Grid.Column="0" Click="Percent_binarization_button_Click" Height="20"/>
+        <Button x:Name="otsu_binarization_button" Content="Binaryzacja Otsu" HorizontalAlignment="Left" Margin="0,274,0,0" VerticalAlignment="Top" Width="150" Grid.Column="0" Click="Otsu_binarization_button_Click" Height="20" />
+
+        <Slider x:Name="threshold" Minimum="0" Maximum="255" TickFrequency="1" IsSnapToTickEnabled="True" SmallChange="1" LargeChange="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="105" Margin="0,145,0,0" Grid.Column="0"></Slider>
+        <TextBlock Text="{Binding ElementName=threshold, Path=Value}" VerticalAlignment="Top" Height="22" Width="105" Margin="10,167,39,0" Grid.Column="0"></TextBlock>
+        <Slider x:Name="threshold2" Minimum="0" Maximum="100" TickFrequency="1" IsSnapToTickEnabled="True" SmallChange="1" LargeChange="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Width="105" Margin="0,225,0,0" Grid.Column="0"></Slider>
+        <TextBlock Text="{Binding ElementName=threshold2, Path=Value}" VerticalAlignment="Top" Height="22" Width="105" Margin="10,247,39,0" Grid.Column="0"></TextBlock>
+    </Grid>
+</Window>
